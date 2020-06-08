@@ -1,0 +1,64 @@
+# Kafka
+
+# Docker Kafka Commands
+## create
+`docker run --rm -it --net=host confluentinc/cp-kafka kafka-topics --zookeeper 127.0.0.1:2181 --create --topic employee --partitions 1 --replication-factor 1`
+## list all topics 
+`docker run --rm -it --net=host confluentinc/cp-kafka kafka-topics --zookeeper 127.0.0.1:2181 --list`
+## listen from beginning
+`docker run --rm -it --net=host confluentinc/cp-kafka kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic topic_name --from-beginning`
+## describe topic
+`docker run --rm -it --net=host confluentinc/cp-kafka kafka-topics --zookeeper 127.0.0.1:2181 --describe --topic nap_watermark_avro`
+
+<hr>
+
+# KafkaCat
+`kafkacat -b hostname
+-X security.protocol=sasl_ssl
+-X sasl.mechanisms=SCRAM-SHA-512
+-X sasl.username=access_key
+-X sasl.password=secret
+-L -t hello-stream`
+
+`kafkacat -b bootstrap_server_name -X security.protocol=sasl_ssl
+-X sasl.mechanisms=SCRAM-SHA-512
+-X sasl.username=key
+-X sasl.password=secret
+-C -b hostname -t topic_name`
+
+`kafkacat -b bootstrap_server_name -X security.protocol=sasl_ssl
+-X sasl.mechanisms=SCRAM-SHA-512
+-X sasl.username=key
+-X sasl.password=secret
+-C -b hostname -t topic_name
+-f "\n Key (%K bytes): %k\t\nValue (%S bytes): %s\n"`
+
+`kafkacat -b bootstrap_server_name -X security.protocol=sasl_ssl
+-X sasl.mechanisms=SCRAM-SHA-512
+-X sasl.username=key
+-X sasl.password=secret
+-C -b hostname -t topic_name
+-p 0 -o beginning
+-f "\n Key (%K bytes): %k\t\nValue (%S bytes): %s\n\Partition: %p\tOffset: %o\n--\n" \`
+
+<hr>
+
+# Schema Registry
+## list subjects
+`curl http://localhost:8081/subjects/`
+
+## cleanup schema-registry
+`curl -X DELETE http://localhost:8081/subjects/{schema name}/versions/{version to delete}`
+
+## Get config
+`curl -X GET http://localhost:8081/config/`
+
+for a specific subject
+`curl -X GET http://localhost:8081/config/{schema name}`
+
+## Set config for a subject
+`curl -X PUT -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"compatibility": "NONE"}' http://localhost:8081/config/{schema name}`
+
+<footer>
+thanks to [mahen-github](https://github.com/mahen-github) for the help starting this and encouragemenet to track what I am learning on the job
+</footer>
