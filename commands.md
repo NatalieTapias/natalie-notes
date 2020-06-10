@@ -59,6 +59,19 @@ for a specific subject
 ## Set config for a subject
 `curl -X PUT -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"compatibility": "NONE"}' http://localhost:8081/config/{schema name}`
 
+<hr>
+# Avro Tools [Copied From [Apache Kafka Series - Confluent Schema Registry & REST Proxy course](https://www.udemy.com/course/confluent-schema-registry/)
+
+# put this in any directory you like
+wget http://central.maven.org/maven2/org/apache/avro/avro-tools/1.8.2/avro-tools-1.8.2.jar
+
+# run this from our project folder. Make sure ~/avro-tools-1.8.2.jar is your actual avro tools location
+java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-generic.avro 
+java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-specific.avro 
+
+# getting the schema
+java -jar ~/avro-tools-1.8.2.jar getschema customer-specific.avro 
+
 <footer>
 thanks to [mahen-github](https://github.com/mahen-github) for the help starting this and encouragemenet to track what I am learning on the job
 </footer>
