@@ -62,15 +62,28 @@ for a specific subject
 <hr>
 # Avro Tools [Copied From [Apache Kafka Series - Confluent Schema Registry & REST Proxy course](https://www.udemy.com/course/confluent-schema-registry/)
 
-# put this in any directory you like
-wget http://central.maven.org/maven2/org/apache/avro/avro-tools/1.8.2/avro-tools-1.8.2.jar
 
+# put this in any directory you like
+wget https://search.maven.org/remotecontent?filepath=org/apache/avro/avro-tools/1.8.2/avro-tools-1.8.2.jar
 # run this from our project folder. Make sure ~/avro-tools-1.8.2.jar is your actual avro tools location
 java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-generic.avro 
 java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-specific.avro 
 
 # getting the schema
 java -jar ~/avro-tools-1.8.2.jar getschema customer-specific.avro 
+
+<hr>
+
+# Use LocalCache & gradle to import Jar to another repo
+## what is a Jar? 
+<em>J</em>ava <em>AR</em>chive, a package file format typically used to aggregate many java class files and associated metadata and resources (text, images, etc) into one file for distribution. 
+<ol>
+  <li>generate Jar</li>
+  <li>copy Jar to a directory in your user/.gradle/localcache; example: 
+  cp ~/documents/event-merger/build/libs/event-merger-0.2.3.jar ../../fb6z/.gradle/localcache/
+  </li>
+</ol>
+
 
 <footer>
 thanks to [mahen-github](https://github.com/mahen-github) for the help starting this and encouragemenet to track what I am learning on the job
