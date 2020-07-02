@@ -10,6 +10,8 @@
 ## describe topic
 `docker run --rm -it --net=host confluentinc/cp-kafka kafka-topics --zookeeper 127.0.0.1:2181 --describe --topic nap_watermark_avro`
 
+
+
 <hr>
 
 # KafkaCat
@@ -59,28 +61,39 @@ for a specific subject
 ## Set config for a subject
 `curl -X PUT -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"compatibility": "NONE"}' http://localhost:8081/config/{schema name}`
 
+## update the Schema Registry API to add a schema for the topic `my-kafka`
+`curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"schema": "{\"type\":\"record\",\"name\":\"Payment\",\"namespace\":\"my.examples\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"amount\",\"type\":\"double\"}]}"}' http://localhost:8081/subjects/my-kafka-value/versions`
 <hr>
-# Avro Tools [Copied From [Apache Kafka Series - Confluent Schema Registry & REST Proxy course](https://www.udemy.com/course/confluent-schema-registry/)
+
+# Avro Tools Copied From [Apache Kafka Series - Confluent Schema Registry & REST Proxy course](https://www.udemy.com/course/confluent-schema-registry/)
 
 
-# put this in any directory you like
+### put this in any directory you like
 wget https://search.maven.org/remotecontent?filepath=org/apache/avro/avro-tools/1.8.2/avro-tools-1.8.2.jar
-# run this from our project folder. Make sure ~/avro-tools-1.8.2.jar is your actual avro tools location
+### run this from our project folder. Make sure ~/avro-tools-1.8.2.jar is your actual avro tools location
 java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-generic.avro 
 java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-specific.avro 
 
-# getting the schema
+### getting the schema
 java -jar ~/avro-tools-1.8.2.jar getschema customer-specific.avro 
 
 <hr>
 
 # Use LocalCache & gradle to import Jar to another repo
-## what is a Jar? 
+### what is a Jar? 
 <em>J</em>ava <em>AR</em>chive, a package file format typically used to aggregate many java class files and associated metadata and resources (text, images, etc) into one file for distribution. 
 <ol>
   <li>generate Jar</li>
   <li>copy Jar to a directory in your user/.gradle/localcache; example: 
   cp ~/documents/event-merger/build/libs/event-merger-0.2.3.jar ../../fb6z/.gradle/localcache/
+  </li>
+  <li>
+  from the project root dir
+  cp -r build/libs/*.jar ~/.gradle/localcache/
+  //comment this implementation
+  //implementation "com.nordstrom.nap.onehop:event-merger:$eventMergerLibVersion"
+  and add the below line 
+  compile fileTree(include: ['*.jar'], dir: '/Users/YOUR_LAN_ID/.gradle/localcache')
   </li>
 </ol>
 
