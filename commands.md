@@ -97,7 +97,6 @@ java -jar ~/avro-tools-1.8.2.jar getschema customer-specific.avro
   </li>
 </ol>
 
-
 <footer>
-thanks to [mahen-github](https://github.com/mahen-github) for the help starting this and encouragemenet to track what I am learning on the job
+reference: [mahen-github](https://github.com/mahen-github) for the help starting this and encouragemenet to track what I am learning on the job
 </footer>
