@@ -19,6 +19,15 @@ For now, I am deciding to modify the local `.vimrc` file in my home directory, l
 [https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac](Apple Guide to Keyboard shortcuts in Terminal)
 
 ------
+
+## Modes 
+| Action | Command |
+| ------ | ------- |
+| Insert Mode | `i` |
+| Append (Insert end of line) | `A` |
+| Visual Mode | `v` |
+
+
 ## Windows 
 | Action | Command |
 | ------ | ------- |
