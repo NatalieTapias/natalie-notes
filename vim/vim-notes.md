@@ -26,7 +26,8 @@ For now, I am deciding to modify the local `.vimrc` file in my home directory, l
 | Insert Mode | `i` |
 | Append (Insert end of line) | `A` |
 | Visual Mode | `v` |
-
+| Replace | |
+| Command-Line | |
 
 ## Windows 
 | Action | Command |
