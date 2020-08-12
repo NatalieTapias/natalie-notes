@@ -1,6 +1,6 @@
 # Java Tidbits 
 
-1. Install [AdoptOpenJDK 11 LTS]{https://adoptopenjdk.net/installation.html} binaries. 
+1. Install [AdoptOpenJDK 11 LTS](https://adoptopenjdk.net/installation.html)
 2. Set `JAVA_HOME` variable
 	a. open `~/.bash_profile` and add the following alias: `export JAVA_HOME=$(location of jdk)
 	b. source ~/.bash_profile 
