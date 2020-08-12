@@ -7,18 +7,6 @@ These are the HOT JAVA tips I've picked up on the job.
 	c. verify: `echo $JAVA_HOME` refers to the path of the JDK installation.  
 3. 
 
-# Use LocalCache & gradle to import Jar to another repo
-  <li>copy Jar to a directory in your user/.gradle/localcache; example: 
-  cp ~/documents/event-merger/build/libs/event-merger-0.2.3.jar ../../fb6z/.gradle/localcache/
-  </li>
-  <li>
-  from the project root dir
-  cp -r build/libs/*.jar ~/.gradle/localcache/
-  //comment this implementation
-  //implementation "com.nordstrom.nap.onehop:event-merger:$eventMergerLibVersion"
-  and add the below line 
-  compile fileTree(include: ['*.jar'], dir: '/Users/YOUR_LAN_ID/.gradle/localcache')
-  </li>
-</ol>
-
-
+# Use LocalCache & gradle to import Jar to another repo (for incremental development of a library, for example)
+  - copy Jar to a directory, for example: `user/.gradle/localcache`
+  - under gradle dependencies: add `compile fileTree(include: ['*.jar'], dir: '/Users/YOUR_LAN_ID/.gradle/localcache')
