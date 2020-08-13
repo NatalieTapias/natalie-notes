@@ -1,4 +1,4 @@
-# What is Vim
+# Vim
 Vim is a built in text editor that comes with almost all Unix systems. It is hyperefficient and provides opportunities for customizing features and settings using an extensive plugin system. You can customize Vim on a per-user basis, using the local `.vimrc` file, or set configurations to apply system-wide, by using the Global `vimrc` File.
 
 For now, I am deciding to modify the local `.vimrc` file in my home directory, located at `~/.vimrc`  
@@ -23,6 +23,11 @@ I am storing a copy of this `~/.vimrc` within the same directory, [here](https:/
 ------
 
 ## Modes 
+*TODO*: describe different vim modes.
+
+## Vim Cheat Sheet 
+
+### Navigate Between Modes
 | Action | Command |
 | ------ | ------- |
 | Insert Mode | `i` |
@@ -31,7 +36,7 @@ I am storing a copy of this `~/.vimrc` within the same directory, [here](https:/
 | Replace |r + <character to replace> |
 | Command-Line | |
 
-## Cursor Movement
+### Cursor Movement
 | Action | Command |
 | ------ | ------- |
 | Jump to End of File | `G` |
@@ -47,14 +52,14 @@ I am storing a copy of this `~/.vimrc` within the same directory, [here](https:/
 | ---- | ---- |
 | jump to line N | `ngg` or `nG` |
 
-## Text Editing 
+### Text Editing 
 | Action | Command |
 | ------ | ------- |
 | Undo   | `u`     |
 | Restore (undo) last changed line | `U`|
  
 
-## Cut & Paste 
+###  Cut & Paste 
 | Action | Command |
 | ------ | ------- |
 | Yank (copy) a line | `yy` |
@@ -67,21 +72,21 @@ I am storing a copy of this `~/.vimrc` within the same directory, [here](https:/
 | Delete to End of Line | `D` |
 | Delete character | `x` |
 
-## Indent Text 
+### Indent Text 
 | Action | Command | 
 | ------ | ------- |
 | Indent Right one Shiftwidth | `>>` |
 | Indent Left one Shiftwidth | `<<` | 
 | Indent Block with  () or {} (cursor on brace) | `>%` | `
 
-## Windows 
+###  Windows 
 | Action | Command |
 | ------ | ------- |
 | Split Horizontally | - :sp <filename> |
 | Split Vertically  | - :vs <filename> |
 | Jump Between Windows | - ctrl w [hjkl] |
 
-## Tabs
+### Tabs
 | Action | Command |
 | ------ | ------- |
 | Open Tabs | vim -p <path/to/file> (... additional files to open) |    
