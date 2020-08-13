@@ -16,8 +16,9 @@ For now, I am deciding to modify the local `.vimrc` file in my home directory, l
 
 
 ### Links that have been helpful 
-[Apple Keyboard Shortcuts in Terminal](https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac)
-
+- [Apple Keyboard Shortcuts in Terminal](https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac)
+- [Mardown Cheat Shet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+- [Vim Cheat Sheet (from weekend.dev)](https://vim.rtorr.com/)
 ------
 
 ## Modes 
@@ -26,9 +27,15 @@ For now, I am deciding to modify the local `.vimrc` file in my home directory, l
 | Insert Mode | `i` |
 | Append (Insert end of line) | `A` |
 | Visual Mode | `v` |
-| Replace | |
+| Replace |r + <character to replace> |
 | Command-Line | |
 
+## Cursor Movement
+| Action | Command |
+| ------ | ------- |
+| Jump to End of File | `G` |
+| Jump to Beginning of File | `g` |
+ 
 ## Windows 
 | Action | Command |
 | ------ | ------- |
