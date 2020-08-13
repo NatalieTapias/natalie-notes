@@ -16,7 +16,7 @@ For now, I am deciding to modify the local `.vimrc` file in my home directory, l
 
 
 ### Links that have been helpful 
-(Apple Keyboard Shortcuts in Terminal)[https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac]
+[Apple Keyboard Shortcuts in Terminal](https://support.apple.com/guide/terminal/keyboard-shortcuts-trmlshtcts/mac)
 
 ------
 
