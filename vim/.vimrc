@@ -1,6 +1,12 @@
 " Hybrid Line Numbers with focus 
 set number relativenumber
 
+" Save the buffer whenever text is changed
+autocmd TextChanged,TextChangedI <buffer> silent write
+
+" Disable error bell
+set belloff=all
+
 "------------------
 " Syntax and Indent
 "------------------
