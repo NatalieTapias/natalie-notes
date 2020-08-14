@@ -59,6 +59,13 @@ The most important ones are *normal*, *insert*, and *visual*.
 | ---- | ---- |
 | jump to line N | `ngg` or `nG` |
 
+
+### Searching
+| Action | Command |
+| ------ | ------- |
+| Search for a word | `? <search term>` + `n` (to go forwards) or `N` (to go backwards)|
+- [Searching Resource](https://www.cyberciti.biz/faq/find-a-word-in-vim-or-vi-text-editor/)
+
 ### Navigating a File System 
 | Action | Command |
 | ------ | ------- |

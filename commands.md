@@ -1,7 +1,7 @@
 # Kafka
 
 ## Docker Kafka Commands
-- *prerequesite*: running kafka in docker container (instructions TODO)
+- *prerequisite*: running kafka in docker container (instructions TODO)
 ### Create a Topic      
 - `docker run --rm -it --net=host confluentinc/cp-kafka kafka-topics --zookeeper 127.0.0.1:2181 --create --topic employee --partitions 1 --replication-factor 1`
 ## List all topics 
