@@ -2,7 +2,10 @@
 set number relativenumber
 
 " Save the buffer whenever text is changed
-autocmd TextChanged,TextChangedI <buffer> silent write
+" autocmd TextChanged,TextChangedI <buffer> silent write
+
+" Always show mode currently editing in
+set showmode
 
 " Disable error bell
 set belloff=all
@@ -20,12 +23,18 @@ set showmatch " show matching braces when text indicator is over them
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set autoindent  
+set autoindent  " new lines inherit the indentation of previous lines
 
 " smart case-sensitive search
 set ignorecase
 set smartcase
+set hlsearch " Enable search highlighting
 
 " enable mouse mode (scrolling, selection, etc)
 set mouse+=a
 
+" remove the annoying bell 
+set noerrorbells
+
+" Random 
+set dir=~/.cache/vim "Directory to store swap files
