@@ -23,7 +23,14 @@ I am storing a copy of my preferred customization [here](https://github.com/Nata
 ------
 
 ## Modes 
-*TODO*: describe different vim modes.
+(source `:h vim-modes-intro`)
+Vim has seven BASIC modes:
+
+- *Normal*: In Normal mode, you can enter all normal editor commands. This is also known as command mode.
+- *Visual*: The movement commands extend a highlighted area. When a non-movement command is used, it is executed for the highlighted area.
+- *Insert*: The text you type is inserted into the buffer. 
+
+The most important ones are *normal*, *insert*, and *visual*.
 
 ## Vim Cheat Sheet 
 
@@ -51,6 +58,12 @@ I am storing a copy of my preferred customization [here](https://github.com/Nata
 | jump forwards to end of word (can contain punctuation) | `E` |
 | ---- | ---- |
 | jump to line N | `ngg` or `nG` |
+
+### Navigating a File System 
+| Action | Command |
+| ------ | ------- |
+| File Explorer Window | `:Explore` |
+| List file names in current directory | (in normal mode) `:e CTRL-D` |
 
 ### Text Editing 
 | Action | Command |
@@ -82,9 +95,9 @@ I am storing a copy of my preferred customization [here](https://github.com/Nata
 ###  Windows 
 | Action | Command |
 | ------ | ------- |
-| Split Horizontally | - :sp <filename> |
-| Split Vertically  | - :vs <filename> |
-| Jump Between Windows | - ctrl w [hjkl] |
+| Split Horizontally | :sp <filename> |
+| Split Vertically  |  :vs <filename> |
+| Jump Between Windows | ctrl w [hjkl] |
 
 ### Tabs
 | Action | Command |
