@@ -75,5 +75,9 @@ java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-specific.avro
 ### getting the schema
 java -jar ~/avro-tools-1.8.2.jar getschema customer-specific.avro 
 
-
+----------
+## Fun & Useful Bash Scripts
+### decode a base64 encoded value 
+it is so simple and fun!
+`echo <secret_encoded> | base64 --decode` 
 
