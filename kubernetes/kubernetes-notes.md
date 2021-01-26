@@ -21,6 +21,7 @@ The kubernetes command-line tool allows you to run commands against Kubernetes c
 
 --------
 - Log in using OIDC authentication using the Nordstrom tool `kubelogin` [github repo here](https://github.com/Nordstrom/kubelogin)
+
 - example usage: config alias, then `kubelogin login <alias>`
 - kubectl get pods 
 - kubectl describe pod <pod name>
