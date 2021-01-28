@@ -10,4 +10,4 @@
 # Use LocalCache & gradle to import Jar to another repo (for incremental development of a library, for example)
   - generate a jar
   - copy Jar to a directory, for example: `user/.gradle/localcache`
-  - under gradle dependencies: add `compile fileTree(include: ['*.jar'], dir: '/Users/YOUR_LAN_ID/.gradle/localcache')
+  - under gradle dependencies: add `compile fileTree(include: ['*.jar'], dir: '**path to directory**')
