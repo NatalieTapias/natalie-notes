@@ -92,5 +92,27 @@ No interface typically | Interface Driven  & Adapts to Environment more easily|
 --------
 
 ## Builder
+* consider complex constructors, force immutability on an object (which you can't do with a bunch of setters), examples: `StringBuilder`, `DocumentBuilder`, `Locale.Builder`
+### what constructor to use 
+* handles construction by an object rather than parameters. 
+* static inner class
+* calls the appropriate constructer based on state 
+
+StringBuilder demonstrates usefulness of pattern.
+Telescoping constructors
+
+Compare with prototype:
+Designed to handle complex constructors
+can be a separate class, can integrate with legacy code 
+
+prototype: implemented around a clone, avoids calling complex constructors, difficult to implement in legacy code
+
+## Prototype Pattern
+Prototypical instance cloned; to get unique instance of same object
+* Trying to avoid costly creation 
+typically implements clone/cloneable 
+avoids keyword "new"
+each instance is unique
+can utilize parameters for construction 
 ## Factory
 ## AbstractFactory
