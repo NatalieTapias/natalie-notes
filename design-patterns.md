@@ -108,11 +108,134 @@ can be a separate class, can integrate with legacy code
 prototype: implemented around a clone, avoids calling complex constructors, difficult to implement in legacy code
 
 ## Prototype Pattern
+* often used to get a unique instance of same object
+* avoid costly creation; also avoid subclassing
+* usually implemented with a Registry 
+* often utilizes interface
+`java.lang.Object#clone()`
+
+Just changes the way we call the keyword new. Implements clone/cloneable method and interface. If creation is expensive, using clone, each instance is unique. 
 Prototypical instance cloned; to get unique instance of same object
-* Trying to avoid costly creation 
-typically implements clone/cloneable 
-avoids keyword "new"
-each instance is unique
-can utilize parameters for construction 
+Shallow VS Deep Copy 
+Getting a unique instance whenever you ask for the object back 
+Pitfalls:
+* Sometimes not clear when to use
+* Used with other patterns (ex: a registry)
+
+contrast: 
+prototype: lighterweight using constructor/clone ; can chose to do shallow/deep copy, just makes copy of itself
+factory: focused on dealing with flexible objects based on request, mulitple constructors, concrete instance & fresh instance (no programmatic defaults by nature)
+
+### summary
+use this pattern to guarantee unique instance every time you ask for it 
+often it is refactored in to help with performance issues 
+
 ## Factory
+Concepts: 
+* doesn't expose instantiation logic 
+* defers creation logic to sublcasses 
+* client only knows about interface 
+* specified by architecture, implemented by user 
+examples in Java API : `Calendar, ResourceBundle, NumberFormat`
+
+### Factory
+Factory Class with static factory method, called in concrete class, returns object type for us 
+
+Example: Calendar Class 
+```Calendar cal = Calendar.getInstance();
+System.out.println(cal);
+System.out.println(cal.get(Calendar.DAY_OF_MONTH);
+```
+// gregorian calendar 
+Calendar cal = Calendar.getInstance(parameter for type of calendar);
+then, the first printl is whatever type I have called 
+
+Problem statement 
+Exercise Factory 
+Crete Pages
+Create Website 
+Create Concrete Classes 
+Create Factory
+
+-----------
+```
+public class ContactPage extends Page {
+
+}
+
+public class CartPage extends Page {
+
+}
+
+public abstract class Page {
+
+}
+
+
+public abstract class Website {
+  protected List<Page> pages = new ArrayList<>();
+
+  public Website() {
+    this.createWebsite();
+  }
+
+  public List<Page> getPages() {
+    return pages;
+  }
+
+// all that implement this abstract class must implement this create website
+  public abstract void createWebsite();
+
+}
+
+public class Blog extends Website {
+  @Override 
+  public void createWebsite() {
+    pages.add(new PostPage());
+    pages.add(new AboutPage();
+    // putting pages in here that are specific to the blog
+    pages.add(new CommentPage());
+    pages.add(new ContactPage());
+    // the base class has nothing to with the creation
+    // blog is concerned with creating the implementation 
+  }
+}
+
+
+public classs Shop extends Website {
+  @Override 
+  public void createWebsite() {
+    pages.add(new CartPage());
+    pages.add(new ContactPage());
+    pages.add(new ItemPage());
+  }
+}
+```
+
+// factory typically named ClassNameFactory
+```
+public class WebsiteFactory {
+  public static Website getWebsite(String siteType) {
+    switch(siteType) {
+      case "blog" : {
+        return new Blog();
+      }
+      case "shop" : {
+        return new Shop();
+      }
+      default : {
+        return null;
+      }
+    }
+  }
+}
+```
+### pitfalls
+complexity! Creation doesn't take place in the factory, it takes place in the sublcass
+not refactored into, you need to design in beginning and then plan accordingly 
+
+contrasting with singleton 
+singleton: returns same instance
+
+factory: interface driven (very contract driven) always subclasses involved 
 ## AbstractFactory
