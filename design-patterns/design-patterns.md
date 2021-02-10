@@ -96,7 +96,7 @@ No interface typically | Interface Driven  & Adapts to Environment more easily|
 ### what constructor to use 
 * handles construction by an object rather than parameters. 
 * static inner class
-* calls the appropriate constructer based on state 
+*  the appropriate constructer based on state 
 
 StringBuilder demonstrates usefulness of pattern.
 Telescoping constructors
@@ -132,14 +132,24 @@ often it is refactored in to help with performance issues
 
 ## Factory
 Concepts: 
-* doesn't expose instantiation logic 
+* doesn't expose instantiation logic. 
+* client knows next to  nothinga bout the object being created
+* common interface exposed
+* specified by architecture/framework ane implemented by user
 * defers creation logic to sublcasses 
 * client only knows about interface 
 * specified by architecture, implemented by user 
 examples in Java API : `Calendar, ResourceBundle, NumberFormat`
 
 ### Factory
-Factory Class with static factory method, called in concrete class, returns object type for us 
+Factory Class with static factory method, called in concrete class, returns object type for us.
+
+Creates instances and manages creation part of the lifecycle.
+
+Factory has a factoryMethod() 
+ConcreteClass has factoryMethod()
+
+Parameterized create method. Factory is an implementation of the factory pattern: factory clas with static factory method, based on parameters passed in, call concrete instance which returns object type for us.  
 
 Example: Calendar Class 
 ```Calendar cal = Calendar.getInstance();
@@ -238,4 +248,8 @@ contrasting with singleton
 singleton: returns same instance
 
 factory: interface driven (very contract driven) always subclasses involved 
+
+Summary:
+Parameter Driven and solves Complex Creation: example: chosing a type at runtime, factory is the only one that does that. 
+
 ## AbstractFactory
